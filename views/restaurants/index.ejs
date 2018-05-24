@@ -1,0 +1,49 @@
+<% include ../partials/header %>
+
+    <main role="main">
+        <div class="jumbotron">
+        <div class="container">
+            <h1>Welcome to Eater!</h1>
+            <h3>Explore restaurants, coffeehouses and street food from all over the world.</h3>
+            <p>Share your fav places with rest of food lovers!</p>
+            <p>
+                <a href="/restaurants/new" class="btn btn-lg btn-light"><i class="fa fa-plus"></i>Add New Place</a>
+            </p>
+            <p>
+                <form action="/restaurants" method="GET" class="form-inline">
+                    <div class="form-group">
+                        <input type="text" name="search" placeholder="Search..." class="form-control">
+                        <input type="submit" value="Search" class="btn btn-default">
+                    </div>
+                </form>
+            </p>
+        </div>
+    </div>
+    </main>
+    
+    <div class="container">
+        <div class="row text-center">
+            <div class="col-md-12">
+                <% if(noMatch !== null){ %>
+                <h3><%= noMatch %></h3>
+                <% } %>
+            </div>
+            <% restaurants.forEach(function(restaurant){ %>
+            <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+                <div class="card" >
+                    <img class="card-img-top" src="<%= restaurant.image %>" alt="<%= restaurant.name %>">
+                      <div class="card-body">
+                        <h4 class="card-title"><%= restaurant.name %></h4>
+                        <p class="card-text"><%= restaurant.location %></p>
+                        <a href="/restaurants/<%= restaurant._id %>" class="btn btn-primary">More info</a>
+                      </div>
+                </div>
+            </div>
+            <% });%>    
+        </div>
+    </div>
+    
+
+
+
+<% include ../partials/footer %>
