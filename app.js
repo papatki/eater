@@ -17,7 +17,9 @@ var contactRoutes = require("./routes/contact");
 
 
 
-mongoose.connect("mongodb://localhost/eater_v6");
+// mongoose.connect("mongodb://localhost/eater_v6");
+mongoose.connect("mongodb://pa_patki:eaterdb@ds125680.mlab.com:25680/eater")
+
 app.use(bodyParser.urlencoded({extended: true}));
 app.set("view engine", "ejs");
 app.use(express.static(__dirname + "/public"));
