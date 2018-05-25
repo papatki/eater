@@ -15,8 +15,6 @@ var restaurantsRoutes = require("./routes/restaurants");
 var indexRoutes = require("./routes/index");
 var contactRoutes = require("./routes/contact");
 
-
-
 mongoose.connect(process.env.DATABASEURL);
 
 

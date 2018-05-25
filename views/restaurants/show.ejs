@@ -23,10 +23,10 @@
             <div class="card">
                <img class="card-img-top" src="<%= restaurant.image %>"> 
                <div class="card-body">
-                   <h4 class="card-title"><a><%= restaurant.name %></a></h4>
+                   <h3 class="card-title"><a><%= restaurant.name %></a></h3>
                    <p class="card-text"><%= restaurant.description %></p>
-                   <p>
-                       <em>Submitted by <%= restaurant.author.username %>, <%= moment(restaurant.createdAt).fromNow() %></em>
+                   <p class="time">
+                       Submitted by <%= restaurant.author.username %>, <%= moment(restaurant.createdAt).fromNow() %>
                     </p>
                     <% if(currentUser && restaurant.author.id.equals(currentUser._id)) { %>
                         <a class="btn btn-warning btn-sm" href="/restaurants/<%= restaurant._id %>/edit" >Edit</a>
@@ -77,9 +77,9 @@
                               <strong>
                                   <%= comment.author.username %>
                               </strong>
-                              <span class="float-right"><%= moment(comment.createdAt).fromNow() %></span>
+                              <span  class="float-right time"><%= moment(comment.createdAt).fromNow() %></span>
                               
-                              <p><%= comment.text %></p>
+                              <p class="commnet"><%= comment.text %></p>
                               <% if (currentUser && currentUser._id.equals(comment.author.id)) { %>
                                 <a class="btn btn-sm btn-warning" role="button" data-toggle="collapse" href="#collapseEdit<%= comment._id %>" aria-expanded="false" aria-controls="collapse<%= comment._id %>">
                                 Edit</a>
