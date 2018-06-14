@@ -26,7 +26,7 @@
                    <h3 class="card-title"><a><%= restaurant.name %></a></h3>
                    <p class="card-text"><%= restaurant.description %></p>
                    <p class="time">
-                       Submitted by <%= restaurant.author.username %>, <%= moment(restaurant.createdAt).fromNow() %>
+                       Submitted by <a href="/users/<%= restaurant.author.id %>"><%= restaurant.author.username %></a>, <%= moment(restaurant.createdAt).fromNow() %>
                     </p>
                     <% if(currentUser && restaurant.author.id.equals(currentUser._id)) { %>
                         <a class="btn btn-warning btn-sm" href="/restaurants/<%= restaurant._id %>/edit" >Edit</a>

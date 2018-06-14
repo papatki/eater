@@ -10,6 +10,7 @@ var methodOverride = require("method-override");
 var User = require("./models/user");
 
 
+
 var commentRoutes = require("./routes/comments");
 var restaurantsRoutes = require("./routes/restaurants");
 var indexRoutes = require("./routes/index");
