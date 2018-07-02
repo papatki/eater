@@ -10,6 +10,9 @@
 					<h4><a href="mailto:<%= user.email %>"><%= user.email %></a></h4>
 				</div>
 			</div>
+			<% if(currentUser && user._id.equals(currentUser._id)) { %>
+                <a class="btn btn-primary btn-sm" href="/users/<%= user._id %>/edit" >Edit profile</a>
+            <% } %>
 		</div>
 		<div class="col-md-8">
 			<h3><%= user.username %>'s restaurants:</h3>
